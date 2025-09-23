@@ -16,6 +16,7 @@ use App\Http\Controllers\AsistenteController;
 Route::get('/eventos', [EventoController::class, 'index']);
 // Recuperar un evento específico
 Route::get('/eventos/{id}', [EventoController::class, 'show']);
+
 // Recuperar todos los ponentes
 Route::get('/ponentes', [PonenteController::class, 'index']);
 // Recuperar un ponente específico
@@ -30,12 +31,14 @@ Route::middleware('auth:api')->group(function () {
  Route::put('/eventos/{evento}', [EventoController::class, 'update']);
  // Eliminar un evento específico
  Route::delete('/eventos/{id}', [EventoController::class, 'destroy']);
+ 
  // Almacenar un ponente nuevo
  Route::post('/ponentes', [PonenteController::class, 'store']);
  // Actualizar un ponente específico
  Route::put('/ponentes/{ponente}', [PonenteController::class, 'update']);
  // Eliminar un ponente específico
  Route::delete('/ponentes/{id}', [PonenteController::class, 'destroy']);
+ 
  // Recuperar todos los asistentes
  Route::get('/asistentes', [AsistenteController::class, 'index']);
  // Almacenar un asistente nuevo
@@ -43,9 +46,7 @@ Route::middleware('auth:api')->group(function () {
  // Recuperar un asistente específico
  Route::get('/asistentes/{id}', [AsistenteController::class, 'show']);
  // Actualizar un asistente específico
- Route::put('/asistentes/{asistente}', [AsistenteController::class,
-'update']);
+ Route::put('/asistentes/{asistente}', [AsistenteController::class, 'update']);
  // Eliminar un asistente específico
- Route::delete('/asistentes/{id}', [AsistenteController::class,
-'destroy']);
+ Route::delete('/asistentes/{id}', [AsistenteController::class, 'destroy']);
 });
